@@ -6,22 +6,37 @@
 int* sortedSquares(int* nums, int numsSize, int* returnSize) {
     *returnSize = numsSize;
     int* result = (int*)malloc(numsSize * sizeof(int));
-    int* copyReturn = result;
+    int* copyStart = result;
     
     // square it
     for (int i = 0; i < numsSize; i++){
-        *copyReturn = pow(*nums, 2);
+        *copyStart = pow(*nums, 2);
         //printf("%d ", *nums);
-        // printf("%d ", *copyReturn);
-        // printf("%d ", copyReturn);
+        // printf("%d ", *copyStart);
+        // printf("%d ", copyStart);
         // printf("%d ", *result);
         // printf("%d ", result);
         nums++;
-        copyReturn++;
+        copyStart++;
     }
     
     // sort it
-    
-    
+    copyStart = result;
+    int* end = result + numsSize - 1;
+    for (int i = 0; i < numsSize; i++){
+        int* copyEnd = end;
+        while (copyStart != copyEnd){
+            if (*copyStart <= *copyEnd){
+                copyEnd--;
+            } else {
+                int temp = *copyStart;
+                *copyStart = *copyEnd;
+                *copyEnd = temp;
+                copyEnd--;
+            }   
+        }
+        copyStart++;
+    }
+
     return result;
 }
