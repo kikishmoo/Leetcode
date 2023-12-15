@@ -17,24 +17,24 @@ int maximumProduct(int* nums, int numsSize) {
     nums++;
     for(int i = 1;  i < numsSize; i++){
         // min
-        if (*nums < min1){
+        if (*nums <= min1){
             temp = min1;
             min1 = *nums;
-            if (temp < min2){
+            if (temp <= min2){
                 min3 = min2;
                 min2 = temp;
-            } else if (temp < min3) {
+            } else if (temp <= min3) {
                 min3 = temp;
             }
-        } else if (*nums < min2){
+        } else if (*nums <= min2){
             min3 = min2;
             min2 = *nums;
-        } else if (*nums < min3) {
+        } else if (*nums <= min3) {
             min3 = *nums;
         } else if (min2 == min1){
             min3 = *nums;
             min2 = *nums;
-        } else {
+        } else if (min2 == min3) {
             min3 = *nums;
         }
         // max
@@ -55,7 +55,7 @@ int maximumProduct(int* nums, int numsSize) {
         } else if (max2 == max1){
             max3 = *nums;
             max2 = *nums;
-        } else {
+        } else if (max2 == max3){
             max3 = *nums;
         }
         nums++;
