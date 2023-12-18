@@ -1,4 +1,5 @@
 // 628. Maximum Product of Three Numbers
+// 17 December 2023
 
 int maximumProduct(int* nums, int numsSize) {
     if (numsSize == 3){
