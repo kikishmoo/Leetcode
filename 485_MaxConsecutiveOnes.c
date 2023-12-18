@@ -1,4 +1,5 @@
 // 485. Max Consecutive Ones
+// 12 December 2023
 
 int findMaxConsecutiveOnes(int* nums, int numsSize) {
     int* start = nums;
