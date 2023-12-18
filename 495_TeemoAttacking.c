@@ -1,4 +1,5 @@
 // 495. Teemo Attacking
+// 14 December 2023
 
 int findPoisonedDuration(int* timeSeries, int timeSeriesSize, int duration) {
     if (timeSeries == NULL || duration == 0 || timeSeriesSize == 0) {
