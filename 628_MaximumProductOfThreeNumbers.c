@@ -31,10 +31,10 @@ int maximumProduct(int* nums, int numsSize) {
             min2 = *nums;
         } else if (*nums <= min3) {
             min3 = *nums;
-        } else if (min2 == min1){
+        } else if (min2 == min1 && i <2){
             min3 = *nums;
             min2 = *nums;
-        } else if (min2 == min3) {
+        } else if (min2 == min3 && i <3) {
             min3 = *nums;
         }
         // max
@@ -52,27 +52,24 @@ int maximumProduct(int* nums, int numsSize) {
             max2 = *nums;
         } else if (*nums >= max3) {
             max3 = *nums;
-        } else if (max2 == max1){
+        } else if (max2 == max1 && i <2){
             max3 = *nums;
             max2 = *nums;
-        } else if (max2 == max3){
+        } else if (max2 == max3 && i <3){
             max3 = *nums;
         }
         nums++;
     }
 
     int product1, product2, product3;
-    // if (numsSize == 4 ){
 
-    // }
-    // if (numsSize > 5){
-        product1 = max1 * max2 * max3;
-        product2 = max1 * min1 * min2;
-        product3 = min1 * min2 * min3;
-    // }
+    product1 = max1 * max2 * max3;
+    product2 = max1 * min1 * min2;
+    product3 = min1 * min2 * min3;
+
     
-    printf("%d %d %d %d %d %d\n", max1, max2, max3, min1, min2, min3);
-    printf("%d %d %d", product1, product2, product3);
+    // printf("%d %d %d %d %d %d\n", max1, max2, max3, min1, min2, min3);
+    // printf("%d %d %d", product1, product2, product3);
     if (product1 >= product2 && product1 >= product3){
         return product1;
     } else if (product2 >= product1 && product2 >= product3){
