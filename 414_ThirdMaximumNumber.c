@@ -1,4 +1,5 @@
 // 414. Third Maximum Number
+// 15 December 2023
 
 int thirdMax(int* nums, int numsSize) {
     int max1, max2, max3, temp;
