@@ -1,4 +1,5 @@
 // 977. Squares of a Sorted Array
+// 12 December 2023
 
 /**
  * Note: The returned array must be malloced, assume caller calls free().
